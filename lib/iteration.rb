@@ -49,8 +49,7 @@ def total_even_pairs(src)
     while i < src.length do 
       inner = src[i]
       if inner[0].to_i % 2 == 0 && inner[1].to_i  % 2 == 0 
-          total = (inner[0] + inner[1])
-          total += 1 
+          total += (inner[0] + inner[1])
       end 
       i += 1
     end
