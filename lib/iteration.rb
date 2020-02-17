@@ -6,13 +6,35 @@ def join_ingredients(src)
   #
   # "I love (inner array element 0) and (inner array element 1) on my pizza""
   # As such, there should be a new String for each inner array, or pair
+  result = []
+  i = 0 
+  while i < src.length do 
+    inner = src[i]
+    result << "I love " + inner[0] + " and " + inner[1] + " on my pizza"
+    i += 1 
+  end 
+  result
+    
 end
 
 def find_greater_pair(src)
   # src will be an array of [ [number1, number2], ... [numberN, numberM] ]
   # Produce a new Array that contains the larger number of each of the pairs
   # that are in the inner Arrays
-end
+  result =[]
+  i = 0 
+  while i < src.length do 
+    inner = src[i]
+    
+    if inner[0] > inner[1] 
+      result << inner[0]
+    else 
+      result << inner[1]
+    end
+    i += 1
+  end 
+  result
+end 
 
 def total_even_pairs(src)
   # src will be an array of [ [number1, number2], ... [numberN, numberM] ]
@@ -22,4 +44,23 @@ def total_even_pairs(src)
   # As a reminder any number % 2 will return 0 or 1. If the result is 0, then
   # the number was even. Review the operator documentation if you've forgotten
   # this!
-end
+  subtotal = []
+    i = 0 
+    while i < src.length do 
+      inner = src[i]
+      if inner[0].to_i % 2 == 0 && inner[1].to_i  % 2 == 0 
+          sum = inner[0].to_i + inner[1].to_i
+          subtotal << sum
+      end 
+      i += 1
+    end
+    
+    index = 0 
+    while index < subtotal.length do 
+      num = subtotal[index].to_i 
+      num += 1 
+    end 
+    index += 1
+    num 
+end 
+ 
