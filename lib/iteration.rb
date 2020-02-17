@@ -44,23 +44,15 @@ def total_even_pairs(src)
   # As a reminder any number % 2 will return 0 or 1. If the result is 0, then
   # the number was even. Review the operator documentation if you've forgotten
   # this!
-  subtotal = []
+    total = 0 
     i = 0 
     while i < src.length do 
       inner = src[i]
       if inner[0].to_i % 2 == 0 && inner[1].to_i  % 2 == 0 
-          sum = inner[0].to_i + inner[1].to_i
-          subtotal << sum
+          total = (inner[0].to_i + inner[1].to_i)
+          total += 1 
       end 
       i += 1
     end
-    
-    index = 0 
-    while index < subtotal.length do 
-      num = subtotal[index].to_i 
-      num += 1 
-    end 
-    index += 1
-    num 
-end 
+
  
